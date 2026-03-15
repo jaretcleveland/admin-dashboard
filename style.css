@@ -124,6 +124,11 @@ body {
   height: 40px;
 }
 
+.top .username {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
 .bottom {
   display: grid;
   grid-template-columns: 
@@ -135,11 +140,16 @@ body {
 }
 
 .greeting {
+  display: flex;
+  flex-direction: column;
   font-weight: 500;
 }
 
+.greeting .line1 {
+  font-size: 0.8rem;
+}
 .greeting .line2 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .bottom ul {
@@ -168,5 +178,46 @@ body {
 .main-content {
   grid-area: main; /* Assign to the main content area */
   background-color: #e6eaed;
-  padding: 1rem;
+  padding: 2rem;
+
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* Main content and trending section */
+  gap: 1.5rem; /* Space between columns */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+  gap: 1.5rem; /* Space between cards */
+  margin-top: 1rem;
+}
+
+.card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 8px solid #f0b429; /* Accent color */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.card .title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.side-widgets {
+  display: grid;
+  gap: 2rem; /* Space between widgets */
+}
+
+.widget {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.main-content h2 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
