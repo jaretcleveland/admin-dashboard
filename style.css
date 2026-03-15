@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'roboto', sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 235px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: /* Define the layout areas */
+    "sidebar header"
+    "sidebar main";
+  min-height: 100vh;
+}
+
+.sidebar {
+  grid-area: sidebar; /* Assign to the sidebar area */
+  background-color: #009ce1;
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: auto auto auto; /* Header, primary nav, secondary nav */
+  gap: 5rem;
+  color: white;
+}
+
+.sidebar-header {
+  display: grid;
+  grid-template-columns: 24px 1fr; /* Icon and text */
+  align-items: center; /* Center items vertically */
+  gap: 1rem; /* Space between icon and text */
+}
+
+.sidebar img {
+  filter: invert(100%); /* Invert colors for white icons */
+}
+
+.sidebar-header img {
+  width: 36px;
+  height: 36px;
+}
+
+.sidebar-nav ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  padding: 0.75rem 0; /* Add spacing between items */
+  display: grid;
+  grid-template-columns: 24px 1fr; /* Icon and text */
+  align-items: center; /* Center items vertically */
+  cursor: pointer; /* Change cursor on hover */
+  gap: 1rem; /* Space between icon and text */
+  border-radius: 4px; /* Rounded corners for hover effect */
+}
+
+.sidebar-nav li:hover {
+  background-color: rgba(255, 255, 255, 0.15); /* Add a hover effect */
+}
+
+.sidebar-nav li img {
+  width: 24px;
+  height: 24px;
+}
+
+.header {
+  grid-area: header; /* Assign to the header area */
+  background-color: #ffffff;
+  padding: 1rem;
+}
+
+.main-content {
+  grid-area: main; /* Assign to the main content area */
+  background-color: #e6eaed;
+  padding: 1rem;
+}
