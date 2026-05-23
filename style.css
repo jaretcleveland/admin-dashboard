@@ -61,7 +61,7 @@ body {
 }
 
 .sidebar-nav li {
-  padding: 0.5rem 0; /* Add spacing between items */
+  padding: 0.5rem 0.25rem; /* Add spacing between items */
   display: grid;
   grid-template-columns: 24px 1fr; /* Icon and text */
   align-items: center; /* Center items vertically */
@@ -73,6 +73,7 @@ body {
 
 .sidebar-nav li:hover {
   background-color: rgba(255, 255, 255, 0.15); /* Add a hover effect */
+  transform: translateX(5px); /* Slightly move the item on hover */
 }
 
 .sidebar-nav li img {
@@ -178,10 +179,10 @@ body {
 .main-content {
   grid-area: main; /* Assign to the main content area */
   background-color: #e6eaed;
-  padding: 2rem;
+  padding: 1rem;
 
   display: grid;
-  grid-template-columns: 3fr 1fr; /* Main content and trending section */
+  grid-template-columns: minmax(0, 3fr) 225px; /* Main content and sidebar widgets */
   gap: 1.5rem; /* Space between columns */
 }
 
@@ -197,12 +198,46 @@ body {
   padding: 1.5rem;
   border-radius: 8px;
   border-left: 8px solid #f0b429; /* Accent color */
+  
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  
+  display: grid;
 }
 
 .card .title {
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.card .text {
+  font-size: 0.75rem;
+  color: #737373;
+}
+
+.card-actions {
+  margin-top: 0.5rem;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  gap: 1rem; /* Space between buttons */
+}
+
+.card-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s; /* Smooth hover effect */
+}
+
+.card-actions img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.7; /* Make icons grey instead if black */
+}
+
+.card-actions button:hover {
+  transform: scale(1.15); /* Slightly enlarge icons on hover */
 }
 
 .side-widgets {
@@ -212,12 +247,76 @@ body {
 
 .widget {
   background-color: white;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .main-content h2 {
   font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.announcements h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.announcements strong {
+  display: block;
+  font-size: 0.85rem;
+  color: black;
+  margin-bottom: 0.2rem;
+}
+
+.announcement-item {
+  font-size: 0.75rem;
+  color: #737373;
+  padding: 0.75rem 0;
+}
+
+.announcement-item:not(:last-child) {
+  border-bottom: 1px solid #000000; /* Light gray border between items */
+}
+
+.trending h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.trending-list {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 0.5rem 1rem;
+}
+
+.trending-item {
+  display: grid;
+  grid-template-columns: 40px 1fr; /* Avatar and text */
+  align-items: center;
+  gap: 1rem; /* Space between avatar and text */
+  padding: 0.3rem 0; /* Vertical padding for each item */
+}
+
+.trending-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.tag {
+  font-size: 0.6rem;
+  font-weight: 500;
+}
+
+.project {
+  font-size: 0.6rem;
+  color: #666;
 }
